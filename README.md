@@ -4,24 +4,9 @@
 This repository contains the official implementation of the paper [Mamba in Speech: Towards an Alternative to Self-Attention](https://arxiv.org/abs/2405.12609).
 
 ## Overview
-For ASR task, we provided espnet related files. 
+For ASR task, we provided espnet related files and Pytorch Version of ConBiMamba. 
 
 For Speech Enhancement task, the pipeline is done by Pytorch
-
-## Installation
-
-To use this implementation, you need to install Mamba in your system. You can then install the required packages using pip.
-
-1. Install the `causal-conv1d` package:
-    ```bash
-    pip install causal-conv1d>=1.2.0
-    ```
-
-2. Install the `mamba-ssm` package:
-    ```bash
-    pip install mamba-ssm
-    ```
-
 
 
 ## Citation
