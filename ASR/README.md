@@ -1,8 +1,26 @@
-# Overview
+# Install the Mamba
+To build your ConBiMamba Model, you first need to install Mamba. The causal-conv1d component, which requires CUDA version 11.8 or higher, is essential for Mamba.
+
+1. Install the `causal-conv1d` package:
+    ```bash
+    pip install causal-conv1d>=1.2.0
+    ```
+2. Install the `mamba-ssm` package:
+    ```bash
+    pip install mamba-ssm
+    ```
+    you can also install mamba we listed in ASR directory with
+    ```bash
+    cd Mamba-in-Speech/ASR/mamba
+    pip install --editable ./
+    ```
+    By this way, it's more esay to edit your mamba model.
+
+# Espnet version of Mamba
 The following files are used for implementing ASR tasks, specifically the relevant ESPnet files.
 
 ## Outer_bimamba.py
-This file contains ExtBimamba, which we proposed in our paper. should be placed in mamba_ssm.modules(in your enviroment package)
+This file contains ExtBimamba, which we proposed in our paper. should be placed in Mamba-in-Speech/ASR/mamba/mamba_ssm/modules(in your enviroment package or mamba)
 
 ## conformer_encoder_mamba.py
 should be placed in espnet/espnet2/asr/encoder
@@ -55,7 +73,7 @@ targets = torch.LongTensor([
 target_lengths = torch.LongTensor([9, 8, 7])
 
 # Initialize the model
-model = Conformer(
+model = ConBiMamba(
     num_classes=10, 
     input_dim=dim, 
     encoder_dim=32, 
